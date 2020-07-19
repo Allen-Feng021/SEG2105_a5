@@ -1,0 +1,17 @@
+software requirements
+
+The development of a simple calculator is for 
+1.  studing Android Studio and familiar with it;
+2.  Develop a simple calculator using Android Studio.
+
+the requirements for a simple calculator
+a. Implement the arithmetic operations with add , sutract,multiply ,devide
+   model and power .
+b. it has a simple editor ,clear current arithmetic expression , has backspace function;
+c. it has a certain robust . recording zero as devidor and expression error.
+d. can do double operating, keep 12 decimal;
+e. can do double model operating . transform double number into integer number
+then model operating.
+f. can do the long arithmetic expression.
+g. final, build  an app on android system, app_debug.apk . directly install 
+   on android phone      
