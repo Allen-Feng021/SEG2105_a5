@@ -1,0 +1,58 @@
+class CalculatorPanel
+{
+  JButton[] numberKeys;  
+  JPanel numberPanel;
+  Jpanel showPanel;
+  Function fun;
+  1 -- * JFrame;
+  1 -- * JButton;
+  1 -- * JPanel;
+  1 -- * JTextField;
+  1 -- * Function;
+}
+
+external JFrame {}
+external JButton{}
+external JPanel{}
+external JTextField{}
+external Stack{}
+
+class Function
+{
+  Stack operandStack;
+  Stack operatorStack;
+  Stack stack;
+  Double result;
+  
+  1 -- * Stack;
+}//$?[End_of_model]$?
+
+namespace -;
+
+
+class CalculatorPanel
+{
+  position 209 209 177 106;
+  position.association CalculatorPanel__JFrame 4,0 103,40;
+  position.association CalculatorPanel__JButton 0,42 110,20;
+  position.association CalculatorPanel__JPanel 26,106 110,23;
+  position.association CalculatorPanel__JTextField 85,106 110,12;
+  position.association CalculatorPanel__Function 178,71 0,92;
+  position.association CalculatorPanel__CalculatorPanel:roleName 177,69 177,70;
+}
+
+class Function
+{
+  position 421 207 163 106;
+  position.association Function__Stack 87,0 75,40;
+}
+
+class JPanel
+{
+  position.association JPanel__JPanel:roleName 109,20 93,0;
+}
+
+class JPanel
+{
+  position 50 330 109 45;
+}
