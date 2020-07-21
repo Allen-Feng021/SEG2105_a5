@@ -88,6 +88,10 @@ public class Function implements ActionListener{
 	   double decimal =1 ;
 	 //it is for forming the decimal parts.
 	   boolean decimalPart = false;
+	   
+	     operandStack.clear();
+	     operatorStack.clear(); 
+	     
 	   // analusing the arithmetic expression one by one bit
 	   for(int i=0;i<s;i++) {
 		   switch (stack.get(i)) {
@@ -132,7 +136,7 @@ public class Function implements ActionListener{
            	             optr= operatorStack.pop();
            	             //process the case of devid as zero 
            	             if (("/%".contains(optr))&&(opd2==0)) {
-           	            	  String st = toString(stack)+" 0 as divisor !";
+           	            	  String st = stackString()+" 0 as divisor !";
           		        	  CalculatorPanel.setText(st);
           		   	          operandStack.clear();
           			          operatorStack.clear(); 
@@ -216,11 +220,11 @@ public class Function implements ActionListener{
 		     for(int i=0;i<st.length();i++) 
 		     { String str =""+st.charAt(i);
 		    	 stack.push(str);		}     
-		 }else 	
+		 } else {stack.clear();}	
 		// clear tree stack;	 
-		 stack.clear();
-	     operandStack.clear();
-	     operatorStack.clear(); 
+		 //stack.clear();
+	    // operandStack.clear();
+	    // operatorStack.clear(); 
 	    }
 	private void showInfo(String str) {
 		CalculatorPanel.setText("");
@@ -240,7 +244,7 @@ public class Function implements ActionListener{
     	  // show new expression;
     	  case "del":{if (!stack.isEmpty()) 
     		               stack.pop() ;
-    	                   CalculatorPanel.setText(toString(stack));
+    	                   CalculatorPanel.setText(stackString());
     	                   break;}
     	  //clear current expression
     	  //clear the show on the screen
@@ -256,12 +260,12 @@ public class Function implements ActionListener{
     	  //push all  numbers and "." and all operators(including +,-,*,/,^ and %)into stack
     	  // forming the arithmetic expression
     	  default: stack.push(str);
-    	           CalculatorPanel.setText(toString(stack));
+    	           CalculatorPanel.setText(stackString());
     	  }
     	str="";
     }
     //combine an arithmetic expression into the string to process
-    private String toString(Stack<String> stack) {
+    private String stackString() {
     	String st="";
     	for(int i=0;i<stack.size();i++) {
     		st += stack.get(i);
